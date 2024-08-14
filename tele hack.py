@@ -20,7 +20,8 @@ def run_tool():
     try:
         # Set up GeckoDriver for Firefox
         firefox_options = Options()
-        firefox_options.set_preference("profile", "/home/your_username/.mozilla/firefox/your_profile.default")  # Replace with the correct path to your Firefox profile
+        firefox_profile_path = "/home/kali/.mozilla/firefox/your_profile.default"  # Replace with the correct path to your Firefox profile
+        firefox_options.set_preference("profile", firefox_profile_path)
         service = Service(GeckoDriverManager().install())
         driver = webdriver.Firefox(service=service, options=firefox_options)
 
